@@ -17,30 +17,17 @@ export class AppComponent {
   constructor(private calculadoraService: CalculadoraService) {}
 
   Operar() {
-    switch (this.operacion) {
-      case '+':
-        this.calculadoraService.realizarOperacion(
-          this.operacion,
-          this.num1,
-          this.num2
-        );
-        break;
-      case '-':
-        this.resultado = this.num1 - this.num2;
-        break;
-      case '*':
-        this.resultado = this.num1 * this.num2;
-        break;
-      case '/':
-        this.resultado = this.num1 / this.num2;
-        break;
+    if(this.operacion!==''){
+      this.calculadoraService.realizarOperacion(
+        this.operacion,
+        this.num1,
+        this.num2
+      ).subscribe(result =>console.log(result));
+    }else{
+      console.log('error i cannot make this operation')
     }
+    
 
-    // Realizar la operación POST con los datos
-    this.calculadoraService.realizarOperacion(
-      this.operacion,
-      this.num1,
-      this.num2
-    );
+    
   }
 }

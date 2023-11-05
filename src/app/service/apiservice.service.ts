@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CalculadoraService {
-  private apiUrl = 'http://localhost:8081';
+  private apiUrl = 'http://localhost:8081/api/tasks';
 
   constructor(private http: HttpClient) {}
 

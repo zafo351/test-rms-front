@@ -13,11 +13,11 @@ export class CalculadoraService {
   realizarOperacion(operacion: string, num1: number, num2: number): Observable<String>  {
     console.log(operacion)
    let result= new Observable<String>()
-    const data = JSON.stringify({
+    const data = {
       number1: num1,
       number2: num2,
       operacion: operacion,
-    });
+    };
     if (operacion == '+') {
      result= this.http.post<String>(this.apiUrl + '/sum', data);
     }

@@ -22,7 +22,7 @@ export class AppComponent {
         this.operacion,
         this.num1,
         this.num2
-      ).subscribe(result =>console.log(result));
+      ).subscribe(result =>this.resultado=Number(result));
     }else{
       console.log('error i cannot make this operation')
     }
